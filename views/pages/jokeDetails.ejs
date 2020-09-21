@@ -1,0 +1,24 @@
+<%- include('../partials/head'); %>
+
+
+<body>
+    <%- include('../partials/nav'); %>
+    <div class="flex">
+        <p><%=data.jokeid%></p>
+        <p><%=data.type%></p>
+        <p><%=data.setup%></p>
+        <p><%=data.punchline%></p>
+        <form action="/deleteJoke/<%=data.id%>?_method=delete" method="post">
+            <button>Delete</button>
+        </form>
+        <form action="/updateJoke/<%=data.id%>?_method=put" method="post">
+            <input type="text" name="jokeid" value="<%=data.jokeid%>">
+            <input type="text" name="type" value="<%=data.type%>">
+            <input type="text" name="setup" value="<%=data.setup%>">
+            <input type="text" name="punchline" value="<%=data.punchline%>">
+            <button>update</button>
+        </form>
+    </div>
+</body>
+
+</html>

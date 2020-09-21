@@ -1,0 +1,23 @@
+<%- include('../partials/head'); %>
+
+
+<body>
+    <%- include('../partials/nav'); %>
+    <%data.forEach(item=>{%>
+    <div class="flex">
+        <p><%=item.id%></p>
+        <p><%=item.type%></p>
+        <p><%=item.setup%></p>
+        <p><%=item.punchline%></p>
+        <form action="/addJoke" method="post">
+            <input type="hidden" name="jokeid" value="<%=item.id%>">
+            <input type="hidden" name="type" value="<%=item.type%>">
+            <input type="hidden" name="setup" value="<%=item.setup%>">
+            <input type="hidden" name="punchline" value="<%=item.punchline%>">
+            <button>add to fav</button>
+        </form>
+    </div>
+    <%})%>
+</body>
+
+</html>

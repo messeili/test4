@@ -1,0 +1,15 @@
+<%- include('../partials/head'); %>
+
+<body>
+    <%- include('../partials/nav'); %>
+    <%data.forEach(item=>{%>
+    <div class="flex">
+        <p><%=item.id%></p>
+        <p><%=item.type%></p>
+        <p><%=item.setup%></p>
+        <p><%=item.punchline%></p>
+    </div>
+    <%})%>
+</body>
+
+</html>
